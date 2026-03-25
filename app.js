@@ -1,124 +1,137 @@
-const CLIENT_ID = "1483751011071033344";
-const GUILD_ID = "1354818163879182519";
+const CLIENT_ID = "1486210210950549604";
+const GUILD_ID = "1210468736205852672";
 const REDIRECT_URI =
-  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  window.location.hostname === "0.0.0.0"
     ? window.location.origin + window.location.pathname
-    : "https://optimum.nhutnguyen.xyz/";
+    : "https://ritual.gjunn.xyz/";
+
+debugger
 
 const ROLE_IDS = {
-  MOD: "1358825437790212153",
-  Chronicler: "1470691925408354476",
-  Mumbassador: "1458482724720480256",
-  Optimized: "1470692400983838732",
-  Refined: "1470691680998133792",
-  Observer: "1469244709015912481",
-  HollywoodActor: "1441058267043463238",
-  RealOG: "1417277418900819968",
-  KingOfTreasures: "1424440134148820992",
-  ServerBooster: "1357033112022028289",
-  Verified: "1356613189047029811",
+  MOD: "1218322564573822986",
+  RadiantRitualist: "1430908117331218442",
+  Zealot: "1381749541581099069",
+  Ritualits: "1339006464139984906",
+  Ritty: "1430904963340566661",
+  Bitty: "1430904348757725325",
+  Forerunner: "1339080087558950922",
+  Blessed: "1311411636367527976",
+  Cursed: "1311411908351365232",
+  Ascendant: "1349829585461706792",
+  Iniatiate: "1212485735039508561",
+  Community: "1350157558148497508",
 };
 
 const ROLE_TAGS = [
   { key: "MOD", label: "MOD", variant: "mod" },
-  { key: "Mumbassador", label: "Mumbassador", variant: "mumbassador" },
-  { key: "Chronicler", label: "Chronicler", variant: "chronicler" },
-  { key: "Optimized", label: "Optimized", variant: "optimized" },
-  { key: "Refined", label: "Refined", variant: "refined" },
-  { key: "Observer", label: "Observer", variant: "observer" },
-  { key: "RealOG", label: "RealOG", variant: "realog" },
-  { key: "KingOfTreasures", label: "King of Treasures", variant: "kingtreasures" },
-  { key: "HollywoodActor", label: "Hollywood Actor", variant: "hollywood" },
-  { key: "ServerBooster", label: "Server Booster", variant: "booster" },
-  { key: "Verified", label: "Verified", variant: "verified" },
+  { key: "RadiantRitualist", label: "Radiant Ritualist", variant: "radiant" },
+  { key: "Zealot", label: "Zealot", variant: "zealot" },
+  { key: "Ritualits", label: "Ritualits", variant: "ritualits" },
+  { key: "Ritty", label: "Ritty", variant: "ritty" },
+  { key: "Bitty", label: "Bitty", variant: "bitty" },
+  { key: "Forerunner", label: "Forerunner", variant: "forerunner" },
+  { key: "Blessed", label: "Blessed", variant: "blessed" },
+  { key: "Cursed", label: "Cursed", variant: "cursed" },
+  { key: "Ascendant", label: "Ascendant", variant: "ascendant" },
+  { key: "Iniatiate", label: "Iniatiate", variant: "iniatiate" },
+  { key: "Community", label: "Community", variant: "community" },
 ];
 
 const ROLE_ORDER = [
   "MOD",
-  "Mumbassador",
-  "Chronicler",
-  "Optimized",
-  "Refined",
-  "Observer",
-  "RealOG",
-  "KingOfTreasures",
-  "HollywoodActor",
-  "ServerBooster",
-  "Verified",
+  "RadiantRitualist",
+  "Zealot",
+  "Ritualits",
+  "Ritty",
+  "Bitty",
+  "Forerunner",
+  "Blessed",
+  "Cursed",
+  "Ascendant",
+  "Iniatiate",
+  "Community",
 ];
 const ROLE_ACCENT = {
-  MOD: "#50b3ff",
-  Chronicler: "#65e380",
-  Optimized: "#65e380",
-  Refined: "#b97cff",
-  Mumbassador: "#ff6f6f",
-  Observer: "#b97cff",
-  HollywoodActor: "#ff6666",
-  RealOG: "#f5945c",
-  KingOfTreasures: "#f7b84f",
-  ServerBooster: "#f5945c",
-  Verified: "#50b3ff",
+  MOD: "#ff4d4d",
+  RadiantRitualist: "#f4c542",
+  Zealot: "#7b5cff",
+  Ritualits: "#32d66b",
+  Ritty: "#a07bff",
+  Bitty: "#4aa8ff",
+  Forerunner: "#46c7ff",
+  Blessed: "#f7c948",
+  Cursed: "#5e4b8b",
+  Ascendant: "#b8bcc6",
+  Iniatiate: "#8fe27a",
+  Community: "#3b82f6",
 };
 const ROLE_COPY = {
   MOD: {
-    headline: "System guardian.",
-    body: "You do not just contribute. You protect and guide the entire space. Your presence keeps the community structured, clear, and aligned.",
-    cta: "Keep holding the standard.",
+    headline: "Ritual guardian.",
+    body: "You keep the circle safe, structured, and aligned. Your presence is the rule of the ritual.",
+    cta: "Hold the standard.",
   },
-  Chronicler: {
-    headline: "Narrative architect.",
-    body: "You turn moments into meaningful narratives. Your content shapes how Optimum is understood and shared.",
-    cta: "Keep telling the story in your own way.",
+  RadiantRitualist: {
+    headline: "Light of the circle.",
+    body: "You radiate energy across the community. Your work keeps the ritual alive and visible.",
+    cta: "Keep the flame bright.",
   },
-  Optimized: {
-    headline: "High-signal, high-impact.",
-    body: "You are a recognized force within the community. Your contributions are consistent, meaningful, and directional.",
-    cta: "Keep raising the bar, your impact is seen.",
+  Zealot: {
+    headline: "Relentless believer.",
+    body: "Your conviction fuels momentum. You push the mission forward without hesitation.",
+    cta: "Stay bold, stay loud.",
   },
-  Refined: {
-    headline: "Intentional contributor.",
-    body: "You have moved beyond observation and started creating real value. Your presence improves the quality of discussion.",
-    cta: "Stay consistent, you are on the right path.",
+  Ritualits: {
+    headline: "Faithful builder.",
+    body: "You show up consistently and move the ritual forward with steady action.",
+    cta: "Keep the cadence.",
   },
-  Mumbassador: {
-    headline: "Community ambassador.",
-    body: "You represent Optimum with energy and consistency. Your presence helps connect people and keep the culture active.",
-    cta: "Keep leading by example.",
+  Ritty: {
+    headline: "Rhythm keeper.",
+    body: "You keep the vibe alive. Small signals from you keep the circle connected.",
+    cta: "Keep the rhythm.",
   },
-  Observer: {
-    headline: "Learning the system.",
-    body: "You are developing an understanding of signal vs noise. Early interactions show you are starting to grasp how things work.",
-    cta: "Take your time, understanding comes before impact.",
+  Bitty: {
+    headline: "Bright spark.",
+    body: "You add quick bursts of energy that make the ritual feel alive and playful.",
+    cta: "Keep the spark.",
   },
-  HollywoodActor: {
-    headline: "Creative spotlight.",
-    body: "You bring flair and momentum to conversations. Your energy helps content stand out and keeps engagement alive.",
-    cta: "Keep bringing cinematic energy to the timeline.",
+  Forerunner: {
+    headline: "Path finder.",
+    body: "You move ahead and set direction. Others follow the signals you set.",
+    cta: "Lead the way.",
   },
-  RealOG: {
-    headline: "Early presence, lasting value.",
-    body: "You have been here since the early stages. Your presence is part of the foundation of the community.",
-    cta: "Keep that energy, it matters long-term.",
+  Blessed: {
+    headline: "Chosen signal.",
+    body: "You carry the favor of the circle. Your presence strengthens trust.",
+    cta: "Stay aligned.",
   },
-  KingOfTreasures: {
-    headline: "Value collector.",
-    body: "You gather and surface valuable pieces for the community. Your consistency helps others discover signal faster.",
-    cta: "Keep uncovering and sharing the gems.",
+  Cursed: {
+    headline: "Shadow bearer.",
+    body: "You hold the dark edge and keep balance in the ritual’s orbit.",
+    cta: "Keep the balance.",
   },
-  ServerBooster: {
-    headline: "Infrastructure supporter.",
-    body: "You directly enhance the server experience for everyone. Your contribution strengthens the system at its core.",
-    cta: "Thank you for supporting the foundation.",
+  Ascendant: {
+    headline: "Rising force.",
+    body: "You are climbing fast with undeniable impact. The ritual is watching.",
+    cta: "Ascend higher.",
   },
-  Verified: {
-    headline: "Starting point.",
-    body: "You have entered the system and unlocked access. Every journey begins here.",
-    cta: "Observe, learn, and start building your presence.",
+  Iniatiate: {
+    headline: "First steps.",
+    body: "You are newly entered and learning the ritual. Every journey begins here.",
+    cta: "Observe, learn, grow.",
+  },
+  Community: {
+    headline: "Circle member.",
+    body: "You are part of the ritual community and help keep the energy moving.",
+    cta: "Stay close to the circle.",
   },
 };
-const DEFAULT_AVATAR = "https://ui-avatars.com/api/?name=Optimum&background=2a2410&color=f6d36b&size=256";
-const BANNER_LOGO_URL = "assets/logo-white.png";
-const MASCOT_ICON_URL = "assets/mascot-love.png";
+const DEFAULT_AVATAR = "https://ui-avatars.com/api/?name=Ritual&background=2a2410&color=f6d36b&size=256";
+const BANNER_LOGO_URL = "assets/logo.png";
+const SIDE_IMAGE_URL = "assets/v.png";
 const CANVAS_FONT = '"Sora","Space Grotesk","Segoe UI",sans-serif';
 const CONTRIBUTION_CHANNELS = {
   tweets: "1356603029268201595",
@@ -172,6 +185,14 @@ async function init() {
 }
 
 function beginDiscordLogin() {
+  if (window.location.protocol === "file:") {
+    status("Please open this page via http://localhost or https:// (file:// blocks Discord login).");
+    return;
+  }
+  if (!window.isSecureContext || !crypto?.subtle || !crypto?.getRandomValues) {
+    status("Discord login requires a secure context (https:// or localhost).");
+    return;
+  }
   if (!CLIENT_ID.startsWith("REPLACE") && !GUILD_ID.startsWith("REPLACE")) {
     // continue
   } else {
@@ -184,19 +205,24 @@ function beginDiscordLogin() {
   localStorage.setItem("discord_oauth_state", state);
   localStorage.setItem("discord_code_verifier", verifier);
 
-  pkceChallenge(verifier).then((challenge) => {
-    const params = new URLSearchParams({
-      response_type: "code",
-      client_id: CLIENT_ID,
-      scope: "identify guilds.members.read",
-      state,
-      redirect_uri: REDIRECT_URI,
-      prompt: "consent",
-      code_challenge: challenge,
-      code_challenge_method: "S256",
+  pkceChallenge(verifier)
+    .then((challenge) => {
+      const params = new URLSearchParams({
+        response_type: "code",
+        client_id: CLIENT_ID,
+        scope: "identify guilds.members.read",
+        state,
+        redirect_uri: REDIRECT_URI,
+        prompt: "consent",
+        code_challenge: challenge,
+        code_challenge_method: "S256",
+      });
+      window.location.href = `https://discord.com/oauth2/authorize?${params.toString()}`;
+    })
+    .catch((error) => {
+      console.error(error);
+      status("Unable to start Discord login. Please ensure HTTPS/localhost is used.");
     });
-    window.location.href = `https://discord.com/oauth2/authorize?${params.toString()}`;
-  });
 }
 
 async function handleOAuthCallback(code, state) {
@@ -254,7 +280,7 @@ async function loadUserData() {
   };
 
   currentProfile = {
-    project: "Optimum",
+    project: "Ritual",
     username: `${me.username}${me.discriminator && me.discriminator !== "0" ? "#" + me.discriminator : ""}`,
     displayName: me.global_name || me.username || "Member",
     handle: `@${me.username || "member"}`,
@@ -288,12 +314,12 @@ async function discordFetch(path) {
 
 function createGuestProfile() {
   return {
-    project: "Optimum",
+    project: "Ritual",
     username: "Guest",
     displayName: "Guest",
     handle: "@connect-discord",
     language: "Not connected",
-    role: "No Role",
+    role: "Community",
     joinedAt: null,
     joinDays: 0,
     avatarUrl: DEFAULT_AVATAR,
@@ -326,7 +352,7 @@ function detectMainRole(matchedRoles) {
   for (const roleName of ROLE_ORDER) {
     if (matchedRoles.includes(roleName)) return roleName;
   }
-  return "No Role";
+  return "Community";
 }
 
 function normalizeRoleId(roleId) {
@@ -334,7 +360,7 @@ function normalizeRoleId(roleId) {
 }
 
 async function fetchContributionStats(userId) {
-  const apiBase = window.OPTIMUM_STATS_API;
+  const apiBase = window.RITUAL_STATS_API;
   if (!apiBase) return null;
   const base = apiBase.replace(/\/+$/, "");
   const params = new URLSearchParams({
@@ -371,7 +397,11 @@ function formatLanguageLabel(locale) {
 }
 
 function isLocalHost() {
-  return window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  return (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "0.0.0.0"
+  );
 }
 
 function renderCard(profile) {
@@ -379,31 +409,56 @@ function renderCard(profile) {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const bg = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  bg.addColorStop(0, "#1d1d23");
-  bg.addColorStop(0.58, "#16161b");
-  bg.addColorStop(1, "#121215");
+  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  bg.addColorStop(0, "#0a0f0d");
+  bg.addColorStop(0.45, "#0f1512");
+  bg.addColorStop(1, "#0a0d0b");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const glowA = ctx.createRadialGradient(220, 180, 30, 220, 180, 420);
-  glowA.addColorStop(0, "rgba(185,124,255,0.22)");
-  glowA.addColorStop(1, "rgba(185,124,255,0)");
+  const beam = ctx.createLinearGradient(0, 120, canvas.width, 680);
+  beam.addColorStop(0, "rgba(57, 242, 171, 0)");
+  beam.addColorStop(0.5, "rgba(57, 242, 171, 0.18)");
+  beam.addColorStop(1, "rgba(57, 242, 171, 0)");
+  ctx.save();
+  ctx.translate(0, -120);
+  ctx.rotate((-6 * Math.PI) / 180);
+  ctx.fillStyle = beam;
+  ctx.fillRect(-200, 160, canvas.width + 400, 260);
+  ctx.restore();
+
+  const glowA = ctx.createRadialGradient(220, 180, 40, 220, 180, 520);
+  glowA.addColorStop(0, "rgba(57, 242, 171, 0.2)");
+  glowA.addColorStop(1, "rgba(57, 242, 171, 0)");
   ctx.fillStyle = glowA;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const glowB = ctx.createRadialGradient(980, 1040, 30, 980, 1040, 500);
-  glowB.addColorStop(0, "rgba(80,179,255,0.18)");
-  glowB.addColorStop(1, "rgba(80,179,255,0)");
+  const glowB = ctx.createRadialGradient(980, 1040, 60, 980, 1040, 560);
+  glowB.addColorStop(0, "rgba(255, 122, 47, 0.2)");
+  glowB.addColorStop(1, "rgba(255, 122, 47, 0)");
   ctx.fillStyle = glowB;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  roundedRect(ctx, 24, 24, canvas.width - 48, canvas.height - 48, 20);
-  ctx.fillStyle = "rgba(239, 239, 239, 0.02)";
+  const frameX = 24;
+  const frameY = 24;
+  const frameW = canvas.width - 48;
+  const frameH = canvas.height - 48;
+  roundedRect(ctx, frameX, frameY, frameW, frameH, 26);
+  ctx.fillStyle = "rgba(236, 255, 244, 0.02)";
   ctx.fill();
-  ctx.strokeStyle = "rgba(239, 239, 239, 0.16)";
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(57, 242, 171, 0.22)";
+  ctx.lineWidth = 2.5;
   ctx.stroke();
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(frameX + frameW - 180, frameY + 18);
+  ctx.lineTo(frameX + frameW - 20, frameY + 18);
+  ctx.lineTo(frameX + frameW - 20, frameY + 58);
+  ctx.closePath();
+  ctx.fillStyle = "rgba(57, 242, 171, 0.18)";
+  ctx.fill();
+  ctx.restore();
 
   drawHeader(profile);
   drawRoleTags(profile);
@@ -421,41 +476,47 @@ function drawHeader(profile) {
   const avatarSize = 156;
 
   ctx.save();
-  ctx.beginPath();
-  ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, avatarSize / 2 + 7, 0, Math.PI * 2);
-  ctx.fillStyle = "rgba(80, 179, 255, 0.72)";
+  roundedRect(ctx, avatarX - 6, avatarY - 6, avatarSize + 12, avatarSize + 12, 28);
+  const frame = ctx.createLinearGradient(avatarX - 6, avatarY - 6, avatarX + avatarSize + 6, avatarY + avatarSize + 6);
+  frame.addColorStop(0, "rgba(57, 242, 171, 0.55)");
+  frame.addColorStop(1, "rgba(255, 122, 47, 0.45)");
+  ctx.fillStyle = frame;
   ctx.fill();
-  ctx.beginPath();
-  ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, avatarSize / 2, 0, Math.PI * 2);
-  ctx.fillStyle = "#efefef";
+  roundedRect(ctx, avatarX, avatarY, avatarSize, avatarSize, 22);
+  ctx.fillStyle = "#ecfff4";
   ctx.fill();
   ctx.restore();
 
-  ctx.fillStyle = "#111218";
+  ctx.fillStyle = "#08110d";
   ctx.font = `700 56px ${CANVAS_FONT}`;
   ctx.fillText("?", avatarX + 66, avatarY + 100);
 
-  ctx.fillStyle = "#efefef";
-  ctx.font = `700 58px ${CANVAS_FONT}`;
-  ctx.fillText(profile.displayName, 260, 138);
+  const nameGlow = ctx.createLinearGradient(260, 100, 720, 170);
+  nameGlow.addColorStop(0, "#ecfff4");
+  nameGlow.addColorStop(0.55, "#baf9de");
+  nameGlow.addColorStop(1, "#ffdfb4");
+  ctx.fillStyle = nameGlow;
+  ctx.font = `700 60px ${CANVAS_FONT}`;
+  ctx.fillText(profile.displayName, 260, 140);
 
-  ctx.fillStyle = "#c7c3cf";
-  ctx.font = `500 43px ${CANVAS_FONT}`;
-  ctx.fillText(profile.handle, 260, 196);
+  ctx.fillStyle = "#c3d7cc";
+  ctx.font = `500 36px ${CANVAS_FONT}`;
+  ctx.fillText(profile.handle, 260, 192);
 
-  ctx.fillStyle = "#a9a5b1";
-  ctx.font = `500 35px ${CANVAS_FONT}`;
-  ctx.fillText(profile.joinedAt ? `Joined ${profile.joinedAt}` : "Joined pending", 260, 252);
+  const meta = profile.joinedAt ? `Joined ${profile.joinedAt}` : "Joined pending";
+  const metaW = ctx.measureText(meta).width + 50;
+  roundedRect(ctx, 260, 210, metaW, 40, 20);
+  ctx.fillStyle = "rgba(57, 242, 171, 0.1)";
+  ctx.fill();
+  ctx.strokeStyle = "rgba(57, 242, 171, 0.35)";
+  ctx.lineWidth = 1.6;
+  ctx.stroke();
+  ctx.fillStyle = "#bfe8d6";
+  ctx.font = `500 24px ${CANVAS_FONT}`;
+  ctx.fillText(meta, 282, 238);
 }
 
 function drawRoleTags(profile) {
-  roundedRect(ctx, 54, 288, canvas.width - 108, 246, 16);
-  ctx.fillStyle = "rgba(239, 239, 239, 0.02)";
-  ctx.fill();
-  ctx.strokeStyle = "rgba(239, 239, 239, 0.14)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-
   const tags = ROLE_TAGS.map((tag) => {
     if (profile.matchedRoles.includes(tag.key)) {
       return tag;
@@ -465,45 +526,57 @@ function drawRoleTags(profile) {
 
   ctx.font = `700 30px ${CANVAS_FONT}`;
 
-  let x = 78;
-  let y = 318;
+  let x = 60;
+  let y = 304;
   for (const item of tags) {
-    const w = Math.max(120, ctx.measureText(item.label).width + 56);
-    if (x + w > canvas.width - 78) {
-      x = 78;
-      y += 70;
+    const w = Math.max(120, ctx.measureText(item.label).width + 62);
+    if (x + w > canvas.width - 60) {
+      x = 60;
+      y += 68;
     }
     drawTag(x, y, w, 46, item.label, item.variant);
-    x += w + 14;
+    x += w + 12;
   }
 }
 
 function drawLearnBanner(drawId) {
-  roundedRect(ctx, 54, 574, canvas.width - 108, 138, 22);
-  const banner = ctx.createLinearGradient(54, 574, canvas.width - 54, 712);
-  banner.addColorStop(0, "rgba(80, 179, 255, 0.22)");
-  banner.addColorStop(1, "rgba(185, 124, 255, 0.18)");
+  const x = 54;
+  const y = 570;
+  const w = canvas.width - 108;
+  const h = 150;
+  roundedRect(ctx, x, y, w, h, 26);
+  const banner = ctx.createLinearGradient(x, y, x + w, y + h);
+  banner.addColorStop(0, "rgba(57, 242, 171, 0.16)");
+  banner.addColorStop(0.5, "rgba(12, 16, 14, 0.05)");
+  banner.addColorStop(1, "rgba(255, 122, 47, 0.18)");
   ctx.fillStyle = banner;
   ctx.fill();
-  ctx.strokeStyle = "rgba(80, 179, 255, 0.62)";
+  ctx.strokeStyle = "rgba(57, 242, 171, 0.45)";
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  drawBannerLogo(drawId, 82, 603, 220, 66);
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x + 24, y + 24);
+  ctx.lineTo(x + 240, y + 24);
+  ctx.lineTo(x + 214, y + 52);
+  ctx.lineTo(x + 24, y + 52);
+  ctx.closePath();
+  ctx.fillStyle = "rgba(57, 242, 171, 0.22)";
+  ctx.fill();
+  ctx.restore();
 
-  ctx.fillStyle = "#ddd8ea";
-  ctx.font = `600 28px ${CANVAS_FONT}`;
-  ctx.fillText("Your contributions are recognized and appreciated.", 336, 651);
+  drawBannerLogo(drawId, x + 30, y + 56, 260, 90);
+
+  ctx.fillStyle = "#dbf4e6";
+  ctx.font = `600 30px ${CANVAS_FONT}`;
+  ctx.fillText("Your contributions are seen and valued.", x + 320, y + 88);
+  ctx.fillStyle = "#a8c8ba";
+  ctx.font = `500 24px ${CANVAS_FONT}`;
+  ctx.fillText("Thank you for shaping the Ritual community.", x + 320, y + 126);
 }
 
 function drawBannerLogo(drawId, x, y, maxW, maxH) {
-  roundedRect(ctx, x - 10, y - 8, maxW + 20, maxH + 16, 32);
-  ctx.fillStyle = "rgba(74, 53, 108, 0.62)";
-  ctx.fill();
-  ctx.strokeStyle = "rgba(185, 124, 255, 0.55)";
-  ctx.lineWidth = 1.5;
-  ctx.stroke();
-
   const img = new Image();
   img.onload = () => {
     if (drawId !== renderNonce) return;
@@ -523,64 +596,95 @@ function drawBannerLogo(drawId, x, y, maxW, maxH) {
 
 function drawStats(profile, drawId) {
   const panelX = 54;
-  const panelY = 748;
+  const panelY = 742;
   const panelW = canvas.width - 108;
-  const panelH = 446;
-  roundedRect(ctx, panelX, panelY, panelW, panelH, 22);
-  ctx.fillStyle = "rgba(239, 239, 239, 0.02)";
+  const panelH = 452;
+  roundedRect(ctx, panelX, panelY, panelW, panelH, 28);
+  ctx.fillStyle = "rgba(236, 255, 244, 0.02)";
   ctx.fill();
-  ctx.strokeStyle = "rgba(239, 239, 239, 0.14)";
+  ctx.strokeStyle = "rgba(57, 242, 171, 0.24)";
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  const roleName = ROLE_COPY[profile.role] ? profile.role : "Verified";
+  const splitX = panelX + 330;
+  ctx.beginPath();
+  ctx.moveTo(splitX, panelY + 24);
+  ctx.lineTo(splitX, panelY + panelH - 24);
+  ctx.strokeStyle = "rgba(57, 242, 171, 0.18)";
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  const roleName = ROLE_COPY[profile.role] ? profile.role : "Community";
   const info = ROLE_COPY[roleName];
   const accent = ROLE_ACCENT[roleName] || "#50b3ff";
-  const contentX = panelX + 42;
-  const contentY = panelY + 102;
-  const contentW = panelW - 84;
-  const mascotSize = 92;
-  const mascotX = panelX + panelW - mascotSize - 26;
-  const mascotY = panelY + 24;
+  const contentX = splitX + 36;
+  const contentY = panelY + 110;
+  const contentW = panelW - (contentX - panelX) - 36;
 
-  drawMascotAccent(drawId, mascotX, mascotY, mascotSize);
 
   ctx.fillStyle = accent;
-  ctx.font = `700 66px ${CANVAS_FONT}`;
+  ctx.font = `700 58px ${CANVAS_FONT}`;
   ctx.fillText(roleName, contentX, contentY);
 
-  ctx.fillStyle = "#efefef";
-  ctx.font = `600 36px ${CANVAS_FONT}`;
-  ctx.fillText(info.headline, contentX, contentY + 64);
+  ctx.fillStyle = "#ecfff4";
+  ctx.font = `600 34px ${CANVAS_FONT}`;
+  ctx.fillText(info.headline, contentX, contentY + 60);
 
-  ctx.fillStyle = "#c4bfce";
-  ctx.font = `500 30px ${CANVAS_FONT}`;
-  drawWrappedText(info.body, contentX, contentY + 116, contentW, 44);
+  ctx.fillStyle = "#c0d7cc";
+  ctx.font = `500 28px ${CANVAS_FONT}`;
+  drawWrappedText(info.body, contentX, contentY + 108, contentW, 40);
 
   ctx.font = `700 30px ${CANVAS_FONT}`;
   const ctaWidth = Math.min(contentW, ctx.measureText(info.cta).width + 56);
-  drawPill(contentX, panelY + panelH - 78, ctaWidth, 48, info.cta, {
-    bg: "rgba(185, 124, 255, 0.14)",
-    border: "rgba(185, 124, 255, 0.4)",
-    text: "#d8c0ff",
+  drawPill(contentX, panelY + panelH - 84, ctaWidth, 48, info.cta, {
+    bg: "rgba(57, 242, 171, 0.18)",
+    border: "rgba(57, 242, 171, 0.55)",
+    text: "#c9ffe3",
   });
+
+  const img = new Image();
+  img.onload = () => {
+    if (drawId !== renderNonce) return;
+    const boxX = panelX + 36;
+    const boxY = panelY + 70;
+    const boxW = 250;
+    const boxH = panelH - 120;
+    roundedRect(ctx, boxX, boxY, boxW, boxH, 22);
+    ctx.fillStyle = "rgba(12, 16, 14, 0.55)";
+    ctx.fill();
+    ctx.strokeStyle = "rgba(57, 242, 171, 0.22)";
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+
+    const ratio = img.naturalWidth / img.naturalHeight;
+    let drawW = boxW - 26;
+    let drawH = drawW / ratio;
+    if (drawH > boxH - 26) {
+      drawH = boxH - 26;
+      drawW = drawH * ratio;
+    }
+    const drawX = boxX + (boxW - drawW) / 2;
+    const drawY = boxY + (boxH - drawH) / 2;
+    ctx.drawImage(img, drawX, drawY, drawW, drawH);
+  };
+  img.src = SIDE_IMAGE_URL;
 }
 
 function drawTag(x, y, w, h, label, variant) {
   const variants = {
     neutral: { bg: "rgba(239, 239, 239, 0.02)", border: "rgba(239, 239, 239, 0.18)", text: "#bcb9c7" },
-    mod: { bg: "rgba(80, 179, 255, 0.2)", border: "rgba(80, 179, 255, 0.56)", text: "#7ac6ff" },
-    chronicler: { bg: "rgba(101, 227, 128, 0.2)", border: "rgba(101, 227, 128, 0.56)", text: "#8bee9f" },
-    mumbassador: { bg: "rgba(255, 102, 102, 0.2)", border: "rgba(255, 120, 120, 0.56)", text: "#ff9a9a" },
-    realog: { bg: "rgba(245, 148, 92, 0.2)", border: "rgba(245, 148, 92, 0.58)", text: "#f9b28a" },
-    hollywood: { bg: "rgba(255, 102, 102, 0.2)", border: "rgba(255, 120, 120, 0.56)", text: "#ff9a9a" },
-    kingtreasures: { bg: "rgba(247, 184, 79, 0.2)", border: "rgba(247, 184, 79, 0.56)", text: "#ffd08a" },
-    booster: { bg: "rgba(185, 124, 255, 0.2)", border: "rgba(185, 124, 255, 0.58)", text: "#cda4ff" },
-    verified: { bg: "rgba(101, 227, 128, 0.2)", border: "rgba(101, 227, 128, 0.56)", text: "#9bf1ab" },
-    observer: { bg: "rgba(185, 124, 255, 0.22)", border: "rgba(185, 124, 255, 0.58)", text: "#caa0ff" },
-    top: { bg: "rgba(80, 179, 255, 0.2)", border: "rgba(80, 179, 255, 0.58)", text: "#7ac6ff" },
-    optimized: { bg: "rgba(101, 227, 128, 0.22)", border: "rgba(101, 227, 128, 0.54)", text: "#86eca1" },
-    refined: { bg: "rgba(185, 124, 255, 0.22)", border: "rgba(185, 124, 255, 0.54)", text: "#c79eff" },
+    mod: { bg: "rgba(255, 77, 77, 0.2)", border: "rgba(255, 77, 77, 0.6)", text: "#ffb0b0" },
+    radiant: { bg: "rgba(244, 197, 66, 0.2)", border: "rgba(244, 197, 66, 0.6)", text: "#ffe19a" },
+    zealot: { bg: "rgba(123, 92, 255, 0.2)", border: "rgba(123, 92, 255, 0.6)", text: "#c9b7ff" },
+    ritualits: { bg: "rgba(50, 214, 107, 0.2)", border: "rgba(50, 214, 107, 0.6)", text: "#9ff0c0" },
+    ritty: { bg: "rgba(160, 123, 255, 0.2)", border: "rgba(160, 123, 255, 0.6)", text: "#d9c8ff" },
+    bitty: { bg: "rgba(74, 168, 255, 0.2)", border: "rgba(74, 168, 255, 0.6)", text: "#b7dcff" },
+    forerunner: { bg: "rgba(70, 199, 255, 0.2)", border: "rgba(70, 199, 255, 0.6)", text: "#b9ecff" },
+    blessed: { bg: "rgba(247, 201, 72, 0.2)", border: "rgba(247, 201, 72, 0.6)", text: "#ffe3a4" },
+    cursed: { bg: "rgba(94, 75, 139, 0.2)", border: "rgba(94, 75, 139, 0.6)", text: "#c6b8e8" },
+    ascendant: { bg: "rgba(184, 188, 198, 0.2)", border: "rgba(184, 188, 198, 0.6)", text: "#e2e5ec" },
+    iniatiate: { bg: "rgba(143, 226, 122, 0.2)", border: "rgba(143, 226, 122, 0.6)", text: "#c8f4b8" },
+    community: { bg: "rgba(59, 130, 246, 0.2)", border: "rgba(59, 130, 246, 0.6)", text: "#b9d5ff" },
     active: { bg: "rgba(239, 239, 239, 0.12)", border: "rgba(239, 239, 239, 0.3)", text: "#efefef" },
     muted: { bg: "rgba(239, 239, 239, 0.01)", border: "rgba(239, 239, 239, 0.12)", text: "rgba(189, 185, 198, 0.58)" },
     default: { bg: "rgba(239, 239, 239, 0.02)", border: "rgba(239, 239, 239, 0.16)", text: "#bebacc" },
@@ -620,19 +724,6 @@ function drawWrappedText(text, x, y, maxWidth, lineHeight) {
   if (line) ctx.fillText(line, x, lineY);
 }
 
-function drawMascotAccent(drawId, x, y, size) {
-  const img = new Image();
-  img.onload = () => {
-    if (drawId !== renderNonce) return;
-    ctx.save();
-    ctx.shadowColor = "rgba(185, 124, 255, 0.35)";
-    ctx.shadowBlur = 14;
-    ctx.drawImage(img, x, y, size, size);
-    ctx.restore();
-  };
-  img.src = MASCOT_ICON_URL;
-}
-
 function drawAvatar(url, drawId) {
   const img = new Image();
   img.crossOrigin = "anonymous";
@@ -663,8 +754,8 @@ function roundedRect(context, x, y, w, h, r) {
 
 function downloadCard() {
   const link = document.createElement("a");
-  const safeName = (currentProfile?.username || "optimum-user").replace(/[^a-z0-9]/gi, "_").toLowerCase();
-  link.download = `optimum-role-card-${safeName}.png`;
+  const safeName = (currentProfile?.username || "ritual-user").replace(/[^a-z0-9]/gi, "_").toLowerCase();
+  link.download = `ritual-role-card-${safeName}.png`;
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
